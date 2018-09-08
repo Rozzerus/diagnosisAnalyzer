@@ -7,20 +7,55 @@
     <groupId>diagnosis-analyzer</groupId>
     <artifactId>diagnosis-analyzer</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <properties>
+        <spring.boot.version>2.0.3.RELEASE</spring.boot.version>
+        <spring.version>5.0.5.RELEASE</spring.version>
+    </properties>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.3.RELEASE</version>
+    </parent>
+    <build>
+        <finalName>diagnosis-analyzer</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>1.5.6.RELEASE</version>
-        </dependency>
         <dependency>
             <groupId>diagnosis-analyzer</groupId>
             <artifactId>diagnosis-analyzer-controller</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
     </dependencies>
+
+
 
 
 

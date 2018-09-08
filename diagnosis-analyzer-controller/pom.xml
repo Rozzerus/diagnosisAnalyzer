@@ -7,8 +7,10 @@
     <groupId>diagnosis-analyzer</groupId>
     <artifactId>diagnosis-analyzer-controller</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <finalName>diagnosis-analyzer-controller</finalName>
+    </build>
     <dependencies>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
